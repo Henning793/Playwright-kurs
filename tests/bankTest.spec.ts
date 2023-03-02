@@ -1,7 +1,6 @@
 import { test, expect } from "@playwright/test";
-import { randomInt } from "crypto";
-
 test.describe("Min første test Suite", () => {
+  //beforeEach logger seg på før hver test som kjøres
   test.beforeEach(async ({ page }) => {
     // Logger på nettbanken.
     await page.goto(
@@ -17,32 +16,6 @@ test.describe("Min første test Suite", () => {
   });
 
   test("Min første test", async ({ page }) => {
-    // await page.pause();
-    await page.getByRole("link", { name: "Checking" }).click();
-    await page.getByRole("link", { name: "New Checking" }).click();
-    await page.getByLabel("Standard Checking").check();
-    await page.getByLabel("Individual").check();
-    await page.locator("#name").click();
-    await page.locator("#name").fill("Testkonto");
-    await page.locator("#openingBalance").click();
-    await page.locator("#openingBalance").fill("1000");
-    await page.getByRole("button", { name: " Submit" }).click();
-    await expect(page.locator(""));
-    // await page.getByText("Testkonto", { exact: true }).click();
-  });
-
-  test("min andre test", async ({ page }) => {
-    // await page.pause();
-    await page.getByRole("link", { name: "Checking" }).click();
-    await page.getByRole("link", { name: "New Checking" }).click();
-    await page.getByLabel("Standard Checking").check();
-    await page.getByLabel("Individual").check();
-    await page.locator("#name").click();
-    const kontonavn: String = `Testkonto${randomInt(10) * randomInt(999)}`;
-    await page.locator("#name").fill(`${kontonavn}`);
-  });
-
-  test.afterAll(async ({ page }) => {
-    await page.close();
+    // Hent kontoinfoen til jsmith fra alle sparekontoer, legg inn tester på suksess og logg beløpet til Console.
   });
 });
