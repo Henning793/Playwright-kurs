@@ -6,7 +6,8 @@ test.describe("Min første test Suite", () => {
     // Lag en sjekk/test som verifiserer at du er logget inn.
     // brukernavn: jsmith@demo.io
     // passord: Demo123!
-    // Bruk dokumentasjonen og hverandre til hjelp:
+    // Bruk dokumentasjonen og hverandre til hjelp: https://playwright.dev/docs/intro 
+    // Kjør testene med: "npx playwright test" i terminalen
     await page.goto(
       "http://ec2-13-49-246-53.eu-north-1.compute.amazonaws.com:8080/bank/login"
     );
