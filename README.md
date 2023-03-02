@@ -16,5 +16,5 @@ Behov for kurset:
 - Gå til nettsiden: https://github.com/Henning793/Playwright-kurs
   --> Der vil du se en tabb/knapp som heter branch, klikk på den.
 
-- Tilbake i terminalen din i VS kjør: "git checkout <branchen du vil sjekke ut>" (sjekke ut betyr bytte til)
+- Tilbake i terminalen din i VS kjør: "git checkout branchenDuVilSjekkeUt" (sjekke ut betyr bytte til)
 - For å se alle bancher du har: "git branch"
