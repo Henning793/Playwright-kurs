@@ -4,16 +4,12 @@ import { randomInt } from "crypto";
 test.describe("Min første test Suite", () => {
   test.beforeEach(async ({ page }) => {
     // Logger på nettbanken.
-    await page.goto(
-      "http://ec2-13-49-246-53.eu-north-1.compute.amazonaws.com:8080/bank/login"
-    );
+    await page.goto("http://13.53.168.89:8080/bank/login");
     await page.getByPlaceholder("Enter User Name").fill("jsmith@demo.io");
     await page.getByPlaceholder("Enter Password").fill("Demo123!");
     await page.getByPlaceholder("Enter Password").press("Enter");
     // Navigerer til forsiden av banken.
-    await page.goto(
-      "http://ec2-13-49-246-53.eu-north-1.compute.amazonaws.com:8080/bank/home"
-    );
+    await page.goto("http://13.53.168.89:8080/bank/login");
   });
 
   test("Min første test", async ({ page }) => {
