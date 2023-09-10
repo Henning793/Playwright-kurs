@@ -6,7 +6,11 @@
   "directories": {
     "test": "test"
   },
-  "scripts": {},
+  "scripts": {
+    "test": "playwright test --headed",
+    "report": "npx playwright show-report",
+    "autoCode": "npx playwright codegen http://13.53.168.89:8080/bank/login"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
