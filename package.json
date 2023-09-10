@@ -6,7 +6,10 @@
   "directories": {
     "test": "test"
   },
-  "scripts": {},
+  "scripts": {
+    "test": "playwright test --headed",
+    "report": "npx playwright show-report"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
