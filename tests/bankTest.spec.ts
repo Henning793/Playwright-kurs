@@ -2,6 +2,18 @@ import { test, expect } from "@playwright/test";
 import { randomInt } from "crypto";
 import { text } from "stream/consumers";
 
+/***
+Testene vi nå har sett på er langt fra perfekt.
+1) Hvilke tanker har du/dere for å gjøre de bedre?
+    - Jeg tenker da på nøyaktighet/pressisjon av testen.
+    - Er testen lav på vedlikehold?
+    - Er testene skrevet godt mtp generell "best practice"
+
+2) Kan vi legge på flere/eller bedre sjekker på om testene var vellykket?
+3) Hvordan tror dere det går med testdataen til denne brukeren om 6 måneder?
+4) Slå deg løs og lag flere tester til denne brukeren som du tenker er nødvendig/lurt.
+***/
+
 test.describe("Min første test Suite", () => {
   test.beforeEach(async ({ page }) => {
     // Logger på nettbanken.
@@ -30,6 +42,16 @@ test.describe("Min første test Suite", () => {
   test("min andre test", async ({ page }) => {
     // Forslag til løsning på oppgave 2:
     //lag en test som setter inn penger på en av kontoene til J. Smith legg til en sjekk på at det ble fullført.
+
+    await page.getByRole("link", { name: " Deposit" }).click();
+    await page.locator("#selectedAccount").selectOption("675");
+    await page.locator("#amount").click();
+    const amount: String = `${randomInt(5000)}`;
+    await page.pause();
+    await page.locator("#amount").fill(`${amount}`);
+    await page.getByRole("button", { name: " Submit" }).click();
+    const visibleAmount = await page.getByText(`$${amount}.00`);
+    expect(visibleAmount !== undefined).toBeTruthy();
   });
 
   test.afterAll(async ({ page }) => {
