@@ -11,7 +11,7 @@ test.describe("Min første test Suite", () => {
   });
 
   test("Min første test", async ({ page }) => {
-    // Automatiser en test for å sette inn (deposit) penger på kontoen til J .Smith.
+    // Automatiser en test for å opprette en "Checking Account" til J. Smith.
     // Legg til en verifisering som sjekker at testen er vellykket.
   });
 });
