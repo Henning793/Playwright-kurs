@@ -1,5 +1,7 @@
 import { test, expect } from "@playwright/test";
 
+// Husk å lese README.md
+
 test.describe("Min første test Suite", () => {
   test("Min første test", async ({ page }) => {
     // Lag først en test som logger inn i nettbanken og gå til forsiden av nettbanken.
@@ -7,7 +9,7 @@ test.describe("Min første test Suite", () => {
     // brukernavn: jsmith@demo.io
     // passord: Demo123!
     // Bruk dokumentasjonen og hverandre til hjelp: https://playwright.dev/docs/intro
-    // Kjør testene med: "npx playwright test" i terminalen
+    // Kjør testene med: "npx playwright test --headed" eller "npm run test" i terminalen
     await page.goto("http://13.53.168.89:8080/bank/login");
   });
 });
