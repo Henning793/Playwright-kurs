@@ -3,14 +3,14 @@
 Behov for kurset:
 
 Visual Studio code editor, eller annen editor som støtter TypeScript
-
 https://code.visualstudio.com/Download
+
 Installer Node package manager (NPM):
-
 https://nodejs.org/en
-Installere Git på datamaskinen.
 
+Installere Git på datamaskinen.
 https://github.com/git-guides/install-git
+
 Informasjon:
 
 Naviger til mappen hvor du har lyst å lagre prosjektet og kjør: "git clone https://github.com/Henning793/Playwright-kurs.git"
