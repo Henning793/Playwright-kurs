@@ -11,5 +11,7 @@ test.describe("Min første test Suite", () => {
     // Bruk dokumentasjonen og hverandre til hjelp: https://playwright.dev/docs/intro
     // Kjør testene med: "npx playwright test --headed" eller "npm run test" i terminalen
     await page.goto("http://16.171.175.98:8080/bank");
+
+    await page.pause(); // dette stopper playwright og åpner kodegeneratoren.
   });
 });
