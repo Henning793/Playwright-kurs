@@ -5,7 +5,9 @@ import { text } from "stream/consumers";
 test.describe("Min første test Suite", () => {
   test.beforeEach(async ({ page }) => {
     // Logger på nettbanken.
-    await page.goto("http://13.53.129.66:8080/bank/login");
+    await page.goto(
+      "http://ec2-16-171-236-130.eu-north-1.compute.amazonaws.com:8080/bank/login"
+    );
     await page.getByPlaceholder("Enter User Name").fill("jsmith@demo.io");
     await page.getByPlaceholder("Enter Password").fill("Demo123!");
     await page.getByPlaceholder("Enter Password").press("Enter");
