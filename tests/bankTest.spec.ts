@@ -10,7 +10,9 @@ test.describe("Min første test Suite", () => {
     // passord: Demo123!
     // Bruk dokumentasjonen og hverandre til hjelp: https://playwright.dev/docs/intro
     // Kjør testene med: "npx playwright test --headed" eller "npm run test" i terminalen
-    await page.goto("http://16.171.175.98:8080/bank");
+    await page.goto(
+      "http://ec2-16-171-236-130.eu-north-1.compute.amazonaws.com:8080/bank/login"
+    );
 
     await page.pause(); // dette stopper playwright og åpner kodegeneratoren.
   });
