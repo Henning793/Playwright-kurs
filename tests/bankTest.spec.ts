@@ -17,7 +17,9 @@ Testene vi nå har sett på er langt fra perfekt.
 test.describe("Min første test Suite", () => {
   test.beforeEach(async ({ page }) => {
     // Logger på nettbanken.
-    await page.goto("http://13.53.129.66:8080/bank/login");
+    await page.goto(
+      "http://ec2-16-171-236-130.eu-north-1.compute.amazonaws.com:8080/bank/login"
+    );
     await page.getByPlaceholder("Enter User Name").fill("jsmith@demo.io");
     await page.getByPlaceholder("Enter Password").fill("Demo123!");
     await page.getByPlaceholder("Enter Password").press("Enter");
@@ -44,7 +46,7 @@ test.describe("Min første test Suite", () => {
     //lag en test som setter inn penger på en av kontoene til J. Smith legg til en sjekk på at det ble fullført.
 
     await page.getByRole("link", { name: " Deposit" }).click();
-    await page.locator("#selectedAccount").selectOption("675");
+    await page.locator("#selectedAccount").selectOption("124");
     await page.locator("#amount").click();
     const amount: String = `${randomInt(5000)}`;
     await page.locator("#amount").fill(`${amount}`);
