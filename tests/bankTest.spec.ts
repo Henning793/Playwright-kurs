@@ -11,12 +11,13 @@ test.describe("Min første test Suite", () => {
     await page.getByPlaceholder("Enter User Name").fill("jsmith@demo.io");
     await page.getByPlaceholder("Enter Password").fill("Demo123!");
     await page.getByPlaceholder("Enter Password").press("Enter");
+    await page.waitForLoadState("networkidle")
   });
 
   test.only("Min første test", async ({ page }) => {
     // Forslag til løsning på oppgave 1
     await page.getByRole("link", { name: "  Checking" }).click();
-    await page.getByRole("link", { name: " New Checking" }).click();
+    await page.getByRole("link", { name: "New Checking" }).click();
     await page.getByLabel("Standard Checking").check();
     await page.getByLabel("Individual").check();
     await page.locator("#name").click();
@@ -33,7 +34,7 @@ test.describe("Min første test Suite", () => {
     //lag en test som setter inn penger på en av kontoene til J. Smith legg til en sjekk på at det ble fullført.
   });
 
-  test.afterAll(async ({ page }) => {
+  test.afterEach(async ({ page }) => {
     await page.close();
   });
 });
