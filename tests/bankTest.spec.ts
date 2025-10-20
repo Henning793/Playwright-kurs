@@ -30,7 +30,7 @@ test.describe("Min første test Suite", () => {
   });
 
   test("Min første test", async ({ page }) => {
-    // Forslag til løsning på oppgave 1
+    // Forslag til løsning på oppgave 2
     await page.getByRole("link", { name: "  Checking" }).click();
     await page.getByRole("link", { name: "New Checking" }).click();
     await page.getByLabel("Standard Checking").check();
@@ -45,7 +45,7 @@ test.describe("Min første test Suite", () => {
   });
 
   test("min andre test", async ({ page }) => {
-    // Forslag til løsning på oppgave 2:
+    // Forslag til løsning på oppgave 3:
     //lag en test som setter inn penger på en av kontoene til J. Smith legg til en sjekk på at det ble fullført.
     await page.getByRole("link", { name: " Deposit" }).click();
     await page.locator("#selectedAccount").selectOption(`${kontonavn} (Standard Checking)`);
