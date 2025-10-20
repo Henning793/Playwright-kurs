@@ -15,7 +15,7 @@ test.describe("Min første test Suite", () => {
   });
 
   test.only("Min første test", async ({ page }) => {
-    // Forslag til løsning på oppgave 1
+    // Forslag til løsning på oppgave 2
     await page.getByRole("link", { name: "  Checking" }).click();
     await page.getByRole("link", { name: "New Checking" }).click();
     await page.getByLabel("Standard Checking").check();
