@@ -15,6 +15,9 @@ Testene vi nå har sett på er langt fra perfekt.
 ***/
 
 test.describe("Min første test Suite", () => {
+
+  const kontonavn: String = `Testkonto${randomInt(10) * randomInt(999)}`;
+
   test.beforeEach(async ({ page }) => {
     // Logger på nettbanken.
     await page.goto(
@@ -23,16 +26,16 @@ test.describe("Min første test Suite", () => {
     await page.getByPlaceholder("Enter User Name").fill("jsmith@demo.io");
     await page.getByPlaceholder("Enter Password").fill("Demo123!");
     await page.getByPlaceholder("Enter Password").press("Enter");
+    await page.waitForLoadState("networkidle")
   });
 
   test("Min første test", async ({ page }) => {
     // Forslag til løsning på oppgave 1
     await page.getByRole("link", { name: "  Checking" }).click();
-    await page.getByRole("link", { name: " New Checking" }).click();
+    await page.getByRole("link", { name: "New Checking" }).click();
     await page.getByLabel("Standard Checking").check();
     await page.getByLabel("Individual").check();
     await page.locator("#name").click();
-    const kontonavn: String = `Testkonto${randomInt(10) * randomInt(999)}`;
     await page.locator("#name").fill(`${kontonavn}`);
     await page.locator("#openingBalance").click();
     await page.locator("#openingBalance").fill("1000");
@@ -44,9 +47,8 @@ test.describe("Min første test Suite", () => {
   test("min andre test", async ({ page }) => {
     // Forslag til løsning på oppgave 2:
     //lag en test som setter inn penger på en av kontoene til J. Smith legg til en sjekk på at det ble fullført.
-
     await page.getByRole("link", { name: " Deposit" }).click();
-    await page.locator("#selectedAccount").selectOption("124");
+    await page.locator("#selectedAccount").selectOption(`${kontonavn} (Standard Checking)`);
     await page.locator("#amount").click();
     const amount: String = `${randomInt(5000)}`;
     await page.locator("#amount").fill(`${amount}`);
@@ -55,7 +57,7 @@ test.describe("Min første test Suite", () => {
     expect(visibleAmount !== undefined).toBeTruthy();
   });
 
-  test.afterAll(async ({ page }) => {
+  test.afterEach(async ({ page }) => {
     await page.close();
   });
 });
