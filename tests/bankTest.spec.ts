@@ -11,6 +11,7 @@ test.describe("Min første test Suite", () => {
     await page.getByPlaceholder("Enter User Name").fill("jsmith@demo.io");
     await page.getByPlaceholder("Enter Password").fill("Demo123!");
     await page.getByPlaceholder("Enter Password").press("Enter");
+    await page.waitForLoadState('networkidle')
   });
 
   test("Min første test", async ({ page }) => {
